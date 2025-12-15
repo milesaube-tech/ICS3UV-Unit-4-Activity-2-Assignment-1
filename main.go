@@ -1,7 +1,7 @@
 /**
-* author:
-* version: 1.0.0
-* date: 2025-12-09
+* author: Miles Aube
+* version: 1.0.1
+* date: 2025-12-14
 * fileoverview: A while-loop program that sums integers inside and outside a given range.
  */
 
@@ -11,7 +11,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strconv"
 	"strings"
 )
 
