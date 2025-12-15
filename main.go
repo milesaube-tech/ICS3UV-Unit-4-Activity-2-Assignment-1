@@ -8,10 +8,17 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
+	//create buffer reader
+	reader := bufio.NewReader(os.Stdin)
+
 	// variables
 	var start int
 	var end int
@@ -21,15 +28,15 @@ func main() {
 
 	// get the range from the user
 	fmt.Print("Enter an integer for the start of the range: ")
-	fmt.Scan(&start)
+	start, _ = reader.ReadString('\n')
 
 	fmt.Print("Enter an integer for the end of the range: ")
-	fmt.Scan(&end)
+	end, _ = reader.ReadString('\n')
 
 	// input loop (do-while equivalent)
 	for {
 		fmt.Print("Enter an integer or zero (0) to end: ")
-		fmt.Scan(&value)
+		value, _ = reader.ReadString('\n')
 
 		if value != 0 {
 			if value >= start && value <= end {
@@ -45,5 +52,5 @@ func main() {
 	// output
 	fmt.Println("The sum of the integers inside the range is", insideSum)
 	fmt.Println("The sum of the integers outside the range is", outsideSum)
-	fmt.Println("Done.")
+	fmt.Println("\nDone.")
 }
